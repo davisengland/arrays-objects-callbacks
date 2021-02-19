@@ -204,25 +204,26 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 function removeItem(list, item) {
-  for(let i = 0; i < list.length; i++) {
-    if(list[i] === item) {
+  if(list && item) {
+    for(let i = 0; i < list.length; i++) {
+      if(list[i] === item) {
       newList = list.splice(i,1)
-  }
-  if(list === false || item === false) {
+      }
+    }
+    return list
+  } else {
     return []
-  }
-  return list
   }
 }
 
 function addItem(list, item) {
-  if(list === false || item === false) {
+  if(list && item ) {
+    list.push(item)
+    return list
+  } else {
     return []
   }
-  list.push(item)
-  return list
 }
-
 
 
 ////////// PROBLEM 9 //////////
@@ -302,19 +303,25 @@ function longer(arr1, arr2) {
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
+// function both(arr1, arr2) {
+//   let duplicates = []
+//   for(let i = 0; i < arr1.length; i++) {
+//     if(arr2.includes(arr1[i])) {
+//       duplicates[i] = arr1[i]
+//     }
+//   }
+//   return duplicates
+// }
+
 function both(arr1, arr2) {
-  arr1.sort()
-  arr2.sort()
   let duplicates = []
   for(let i = 0; i < arr1.length; i++) {
-    if(arr2.includes(arr1[i])) {
+    if(arr1[i] === arr2[i]) {
       duplicates[i] = arr1[i]
     }
   }
   return duplicates
 }
-
-
 
 ////////// PROBLEM 12 //////////
 
