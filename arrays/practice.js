@@ -203,24 +203,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-// function removeItem(list, item) {
-//   for(let i = 0; i < list.length; i++) {
-//     if(list[i] === item) {
-//       newList = list.splice(i,1)
-//   }
-//   if(list === false || item === false) {
-//     return []
-//   }
-//   return list
-// }
+function removeItem(list, item) {
+  for(let i = 0; i < list.length; i++) {
+    if(list[i] === item) {
+      newList = list.splice(i,1)
+  }
+  if(list === false || item === false) {
+    return []
+  }
+  return list
+  }
+}
 
-// function addItem(list, item) {
-//   if(list === false || item === false) {
-//     return []
-//   }
-//   list.push(item)
-//   return list
-// }
+function addItem(list, item) {
+  if(list === false || item === false) {
+    return []
+  }
+  list.push(item)
+  return list
+}
 
 
 
@@ -230,8 +231,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
-
+function maker() {
+  let arr = []
+  for(let i = 0; i < 215; i++) {
+    arr[i] = i+1
+  }
+  return arr
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -246,7 +252,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen(numbers) {
+  let numbers2 = numbers.map((i) => Number(i))
+  let newNumbers = []
+  for(let n = 0; n < numbers2.length; n++) {
+    newNumbers[n] = numbers2[n] + 10
+  }
+  return newNumbers
+}
 
 
 
@@ -271,7 +284,13 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-//Code Here
+function longer(arr1, arr2) {
+  if(arr1.length > arr2.length) {
+    return arr1
+  } else if(arr1.length <= arr2.length) {
+    return arr2
+  }
+}
 
 
 
@@ -283,7 +302,17 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both(arr1, arr2) {
+  arr1.sort()
+  arr2.sort()
+  let duplicates = []
+  for(let i = 0; i < arr1.length; i++) {
+    if(arr2.includes(arr1[i])) {
+      duplicates[i] = arr1[i]
+    }
+  }
+  return duplicates
+}
 
 
 
@@ -324,8 +353,7 @@ var colt = {
   After that, console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
-
+devMountainEmployees = [joe, cahlan, ryan, colt]
 
 
 /*
@@ -333,7 +361,11 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+for(let i = 0; i < devMountainEmployees.length; i++) {
+  if(devMountainEmployees[i] === cahlan) {
+    devMountainEmployees.splice(i,1)
+  }
+}
 
 
 
@@ -345,8 +377,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
-
+let users = {}
 
 
 /*
@@ -366,7 +397,21 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+var user2 = {
+  name: 'Jack McIver',
+  email: 'jack.mciver@devmounta.in',
+  password: 'jack2',
+  username: 'jackcode'
+}
+
+var user3 = {
+    name: 'Ben McIver',
+    email: 'ben.mciver@devmounta.in',
+    password: 'ben2',
+    username: 'bencode'
+}
+
+users.push(user1, user2, user3)
 
 
 
@@ -380,8 +425,11 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
-
+for(let i = 0; i < users.length; i++) {
+  if(users[i].email === users.user1.email) {
+    users.splice(i,1)
+  }
+}
 
 
 /*
