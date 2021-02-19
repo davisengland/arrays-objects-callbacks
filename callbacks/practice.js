@@ -118,7 +118,7 @@ contains(names, 'Colt', function(result){
 */
 
 function uniq(arr5, cb5) {
-  arrNew = [...new Set(arr5)]
+  let arrNew = [...new Set(arr5)]
   cb5(arrNew)
 }
 
@@ -136,6 +136,13 @@ uniq(names, function(uniqArr){
   Write a function called each that takes in an array of names and a callback function. 
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
+
+arr = [5, 6, 7, 8]
+
+for(let k = 0; k < 4; k++) {
+  arr[k]
+}
+
 
 function each(arr6, cb6) {
   for(let i = 0; i < arr6.length; i++) {

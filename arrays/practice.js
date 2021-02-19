@@ -128,7 +128,23 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray) {
+  let evens = []
+  let odds = []
+  let evensOdds = []
+
+  for(let i = 0; i < numbersArray.length; i++) {
+    if(numbersArray[i] % 2 === 0) {
+      evens.push(numbersArray[i])
+    } else {
+      odds.push(numbersArray[i])
+    }
+  }
+
+  evensOdds = [evens, odds]
+
+  return evensOdds
+}
 
 
 
@@ -150,7 +166,15 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(arr) {
+  let randomNumber = getRandomArbitrary()
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === randomNumber) {
+      return true
+    }
+  }
+  return false
+}
 
 
 
@@ -179,7 +203,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+// function removeItem(list, item) {
+//   for(let i = 0; i < list.length; i++) {
+//     if(list[i] === item) {
+//       newList = list.splice(i,1)
+//   }
+//   if(list === false || item === false) {
+//     return []
+//   }
+//   return list
+// }
+
+// function addItem(list, item) {
+//   if(list === false || item === false) {
+//     return []
+//   }
+//   list.push(item)
+//   return list
+// }
 
 
 
